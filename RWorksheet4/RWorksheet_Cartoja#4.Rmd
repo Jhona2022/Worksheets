@@ -1,0 +1,81 @@
+---
+title: "RWorksheet_Cartoja#4"
+author: "Jhona Mae Cartoja"
+date: "2022-11-22"
+output: pdf_document
+---
+
+#1. The table below shows the data about shoe size and height. Create a data frame..
+#a. Describe the data.
+```{r, error = TRUE}
+Shoesize <- c(6.5,9.0,8.5,8.5,10.5,7.0,9.5,9.0,
+              13.0,7.5,10.5,8.5,12.0,10.5,
+              13.0,11.5,8.5,5.0,10.0,
+              6.5,7.5,8.5,10.5,8.5,10.5,11.0,9.0,13.0)
+
+Height <- c(66.0,68.0,64.5,65.0,70.0,
+            64.0,70.0,71.0,72.0,64.0,
+            74.5,67.0,71.0,71.0,77.0,72.0,
+            59.0,62.0,72.0,66.0,64.0,67.0,73.0,
+            69.0,72.0,70.0,69.0,70)
+
+Gender <- c("F","F","F","F","M","F","M","F","M",
+            "M","M","F","M","M","M","M","F","F",
+            "M","F","M","M","M","F","M","M","M","M")
+
+dataframe <- data.frame(Shoesize,Height,Gender)
+dataframe
+```
+
+#b. Find the mean of shoe size and height of the respondents. Copy the codes and results.
+
+```{r, error = TRUE}
+summary(dataframe)
+```
+
+#c. Is there a relationship between shoe size and height? Why?
+
+# -Yes, there is. Sometimes, your shoe size varies on your height. The higher the height, the greater the shoe size.
+
+
+#2. Construct character vector months to a factor with factor() and assign the result to factor_months_vector. Print out factor_months_vector and assert that R prints out the factor levels below the actual values.Consider data consisting of the names of months:
+
+```{r, error = TRUE}
+months <- c("March","April","January","November","January",
+            "September","October","September","November",
+            "August","January","November","November","February",
+            "May","August", "July","December","August","August",
+            "September","November","February","April")
+
+factor_months <- factor(months)
+factor_months
+```
+
+
+#3. Then check the summary() of the months_vector and factor_months_vector.Interpret the results of both vectors. Are they both equally useful in this case?
+```{r, error = TRUE}
+summary(months)
+summary(factor_months)
+```
+#4. Create a vector and factor for the table below.
+```{r, error = TRUE}
+factor_data <- c(1,4,3)
+
+new_order_data <-factor(factor_data,levels=c("East","West","North"))
+
+print(new_order_data)
+```
+
+#5. Enter the data below in Excel with file name = import_march.csv
+
+#a. Import the excel file into the Environment Pane using read.table() function.
+```{r, error = TRUE}
+data_tab <- read.table("/cloud/project/import_march.csv", header=TRUE, sep = ",")
+data_tab
+```
+
+#b. View the dataset. Write the code and its result.
+```{r, error = TRUE}
+data_tab <- read.csv("/cloud/project/import_march.csv")
+data_tab
+```
